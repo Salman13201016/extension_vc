@@ -1,0 +1,34 @@
+{
+	"name": "CAXKIT",
+	"description": "CA Extension Kit (Alpha/Bravo)",
+	"version": "0.3.1.0",
+	"manifest_version": 3,
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"css": ["caxkit.css"],
+			"js": [
+				"jquery.js",
+				"cmfile-helper.js",
+				"db-helper.js",
+				"info-helper.js",
+				"memory-helper.js",
+				"page-helper.js",
+				"parser-helper.js",
+				"progbar-helper.js",
+				"setting-helper.js",
+				"snackbar-helper.js",
+				"tarikh-helper.js",
+				"user-helper.js",
+				"vale-helper.js",
+				"view-helper.js",
+				"filenav-helper.js",
+				"fetcher-helper.js",
+				"filewindow-helper.js",
+				"tempnav-helper.js",
+				"myevent-helper.js",
+				"caxkit-final.js"
+			]
+		}
+	]
+}

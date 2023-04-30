@@ -1,0 +1,725 @@
+#main {
+	background: rgb(254, 254, 254);
+    margin: 5% auto 15%;
+    border: 1px solid rgb(136, 136, 136);
+    width: 100%;
+    max-width: 400px;
+}
+
+.helpref {
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
+}
+
+/* The Modal (background) */
+.mymodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  /* padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.mymodal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  margin-bottom: 0;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 88%;
+  max-width: 400px;
+}
+
+/* The Close Button */
+.mymodal-close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.mymodal-close:hover,
+.mymodal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tab {
+	display: flex;
+	/*justify-content: space-between;*/
+	overflow-x: auto;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+}
+.myscrollbar {
+	overflow-x: auto;
+}
+.myscrollbar::-webkit-scrollbar {
+	width: 1px;
+	height: 4px;
+}
+.myscrollbar::-webkit-scrollbar-track {
+	background: transparent;
+	/*background: #ccc;*/
+}
+.myscrollbar::-webkit-scrollbar-thumb {
+	background: rgba(0,0,0,.3);
+	border-radius: 1rem;
+}
+.tab button {
+	text-transform: uppercase;
+	white-space: nowrap;
+	flex-grow: 1;
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: .1s;
+}
+.tab button:hover {
+	background-color: #ddd;
+}
+.tab button.active {
+	background-color: #ccc;
+}
+.tabcontent {
+	display: none;
+	padding: 6px 0;
+	/*border: 1px solid #ccc;*/
+	border-top: none;
+}
+.tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+
+.mytable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.mytable td, .mytable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.mytable tr:first-child th:first-child,
+.mytable tr:first-child th:nth-child(2) {
+	background: none;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+.mytable tr td:last-child {
+	background: #212121;
+	color: white;
+}
+
+.mytable tr th:nth-child(2) {
+	text-align: center;
+}
+
+.mytable tr:nth-child(even){background-color: #f2f2f2;}
+
+.mytable tr:hover {background-color: #ddd;}
+
+.mytable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: royalblue;
+  color: white;
+  white-space: nowrap;
+}
+
+.btn-group {
+	display: flex;
+	overflow-x: auto;
+	margin-bottom: .5rem;
+}
+.btn-group button {
+	flex-grow: 1;
+	background-color: #ddd; /* Green background */
+	border: 1px solid #ccc; /* Green border */
+	color: black; /* White text */
+	padding: 10px 24px; /* Some padding */
+	cursor: pointer; /* Pointer/hand icon */
+	white-space: nowrap;
+	text-transform: uppercase;
+}
+.btn-group button:not(:first-child) {
+	border-left: none;
+}
+.btn-group button:hover {
+	background-color: dodgerblue;
+	color: white;
+}
+.btn-group button.active {
+	background-color: royalblue;
+	color: white;
+}
+.btn-group button span {
+	background: #212121;
+	color: white;
+	padding: 3px 7px;
+	margin-left: .5rem;
+	border-radius: .5rem;
+}
+
+.mynavigator {
+	display: flex;
+}
+.mynavigator > div {
+	flex-grow: 1;
+	display: flex;
+	justify-content: space-around;
+	background: #212121;
+	color: white;
+	align-items: center;
+	padding: 1rem 0;
+}
+.mynavigator > div > span {
+	/*padding: 1rem 2rem;*/
+}
+.mynavigator > div > span:first-child, .mynavigator > div > span:last-child {
+	/*padding: 20px;*/
+}
+.mynavigator > div > span:first-child {
+	/*background: #666666;*/
+	color: lightgreen;
+}
+.mynavigator > div > span:last-child {
+	color: lightblue;
+}
+.mynavigator > div > span:nth-child(2) {
+	
+}
+.mynavigator button {
+	padding: 0 1rem;
+}
+
+.fa-box {
+	display: flex;
+	margin-top: .5rem;
+	flex-flow: row nowrap;
+}
+.fa-box button {
+	width: 100%;
+	text-transform: uppercase;
+	padding: 8px;
+}
+.fa-box button:first-child {
+	margin-right: 8px;
+}
+.fa-box button:last-child {
+	margin-left: 8px;
+}
+
+.fa-group {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 8px;
+	margin: 1rem 0px;
+}
+.fa-group button {
+	text-transform: uppercase;
+	padding: 6px;
+}
+.filewindow {
+	margin: 1rem 0;
+}
+.filewindow > p {
+	text-align: right;
+}
+
+.myfiletable {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.myfiletable td, .myfiletable th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.myfiletable th {
+	text-align: right;
+	white-space: nowrap;
+	padding: 0 1rem;;
+}
+
+.myfiletable tr:nth-child(even) td {
+  background-color: #eee;
+}
+.myfiletable.partial tr:nth-child(even) td {
+  background-color: #ffdb99;
+}
+.myfiletable.completed tr:nth-child(even) td {
+  background-color: #99ff99;
+}
+.myfiletable.floated tr:nth-child(even) td {
+  background-color: #b3c6ff;
+}
+
+.myfiletable tr.optional {
+	display: none;
+}
+.myfiletable tr.optional.show {
+	display: table-row;
+}
+
+input.caxkit {
+	width: 100%;
+	padding: 8px;
+}
+
+.mystage {
+	display: flex;
+	margin-bottom: 1rem;
+}
+.mystage span {
+	color: gold;
+	font-weight: bold;
+	font-size: 1rem;
+	padding: 8px 16px;
+	background: #212121;
+}
+.mystage button {
+	padding: 8px 16px;
+	background: royalblue;
+	color: white;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	margin-left: 1rem;
+}
+
+.mycontact p {
+	margin: 1rem 0px 0px 6px;
+	text-align: left;
+}
+.mycontact p:first-child {
+	margin-top: .5rem;
+}
+.mycontact button {
+	text-transform: uppercase;
+	padding: 4px 8px;
+	background: royalblue;
+	color: white;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	margin-left: .5rem;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.caxkit {
+	box-sizing: border-box;
+}
+textarea.caxkit {
+	width: 100%;
+	padding: 8px;
+}
+
+button.btn-block {
+	background: royalblue;
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 8px 16px;
+	width: 100%;
+	display: block;
+	margin-top: .5rem;
+}
+button.dark {
+	color: white;
+	background: #212121;
+}
+.min-w-50px {
+	min-width: 60px;
+}
+.max-w-150px {
+	max-width: 150px;
+}
+
+.commrate {
+	display: flex;
+}
+.myfiletable input[type=number] {
+	text-align: center;
+}
+.myfiletable input:not([type=radio]) {
+	width: 100%;
+	padding: 8px;
+}
+
+.filenotice {
+	text-transform: uppercase;
+	color: red;
+}
+
+.noteshead {
+	display: flex;
+}
+.noteshead span, .noteshead button {
+	color: white;
+	padding: 4px 10px;
+	border: none;
+	outline: none;
+}
+.noteshead button {
+	cursor: pointer;
+}
+.noteshead span {
+	background: #212121;
+}
+.notesbody .note:last-child {
+	margin-top: .5rem;
+}
+.notesbody {
+	padding: 4px;
+	margin-top: .5rem;
+	background: #212121;
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.2s ease-out;
+	display: flex;
+	flex-flow: column-reverse;
+}
+.notesbody > p {
+	margin: .5rem;
+	font-style: italic;
+	color: white;
+}
+
+.note {
+	position: relative;
+	background: #eee;
+	padding: 4px;
+	margin-bottom: .5rem;
+}
+.note > span:nth-child(2) {
+	position: absolute;
+	bottom: 0;
+	color: red;
+}
+.note > span:nth-child(3) {
+	font-size: .75rem;
+	border-bottom: 1px dashed;
+}
+.note > p {
+	margin-bottom: 1.5rem;
+}
+.note .na-group {
+	position: absolute;
+	right: 4px;
+	bottom: 4px;
+	display: flex;
+}
+.note .na-group button:last-child {
+	color: royalblue;
+}
+.note .na-group button {
+	border: none;
+	background: inherit;
+	cursor: pointer;
+	outline: none;
+	text-transform: uppercase;
+	padding: 0 1rem;
+}
+
+.toolbar {
+	z-index: 3;
+	padding: 8px;
+	background: rgba(0,0,0,.8);
+	position: fixed;
+	top: 50%;
+	left: 0;
+	transform: translate(0, -50%);
+	transition: all .1s ease-in-out;
+}
+#toolbar.right #toolbarToggler {
+	transform: translate(-100%, -50%);
+    right: auto;
+    left: 0;
+    border-radius: 25px 0px 0px 25px;
+}
+#toolbar.right {
+	left: auto;
+	right: 0px;
+}
+#toolbar.noshow {
+	transform: translate(-100%, -50%);
+}
+#toolbar.right.noshow {
+	transform: translate(100%, -50%);
+}
+
+#toolbarToggler {
+	position: absolute;
+    top: 50%;
+    transform: translate(100%, -50%);
+    right: 0px;
+    color: white;
+    padding: 12px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 0px 25px 25px 0px;
+    background: rgba(0, 0, 0, 0.5);
+    width: auto;
+}
+.toolbar table {
+	width: 100%;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	margin: .5rem 0;
+}
+.toolbar table .all {
+	color: lightblue;
+}
+.toolbar table .pp {
+	color: orange;
+}
+.toolbar table .c {
+	color: lightgreen;
+}
+.toolbar > div > button {
+	display: block;
+	width: 100%;
+	padding: 12px;
+	text-transform: uppercase;
+	margin: 0px auto 8px;
+}
+.teamSetting {
+	display: flex;
+	justify-content: space-between;
+	padding: 8px;
+	background: gray;
+	border-radius: 8px;
+}
+.teamSetting div {
+	display: flex;
+	align-items: center;
+	text-transform: uppercase;
+	color: white;
+}
+.teamSetting div input, .tbViewSetting div input {
+	margin: 0;
+}
+.teamSetting div label, .tbViewSetting div label {
+	margin-left: .3rem;
+}
+
+.tbViewSetting {
+	margin-top: 1rem;
+	color: white;
+}
+.tbViewSetting > div {
+	display: flex;
+	align-items: center;
+	margin-bottom: .5rem;
+}
+
+.myautocomplete {
+	width: 100%;
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+  margin: .5rem 0;
+  box-sizing: border-box;
+}
+.myautocomplete input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.myautocomplete input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+  box-sizing: border-box;
+}
+.myautocomplete input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  box-sizing: border-box;
+}
+.myautocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the myautocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+}
+.myautocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+  box-sizing: border-box;
+}
+.myautocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+  box-sizing: border-box;
+}
+.myautocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.myautocomplete-items strong {
+	color: red;
+	box-sizing: border-box;
+}
+
+.myautocomplete-items {
+	color: gray;
+	box-sizing: border-box;
+}
+
+.myautocomplete-active strong {
+	color: #212121 !important;
+	box-sizing: border-box;
+}
+.myautocomplete-items strong {
+	color: red;
+	box-sizing: border-box;
+}
+
+.myprogressbar p {
+	color: white;
+	margin: .2rem 0;
+}
+#myprogress {
+	width: 100%;
+	position: relative;
+	background: gray;
+	border-radius: 15px;
+	overflow: hidden;
+}
+#mybarText {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+#mybar {
+	width: 0%;
+	height: 15px;
+	background: rgba(0,255,0,.5);
+}
+
+
+#info {
+	text-align: center;
+}
+
+#searchView .box {
+	padding: 8px 16px;
+	margin-bottom: 1rem;
+}
+#searchView .filewindow {
+	padding: 0 1rem;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#mysnackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: 0;
+  transform: translate(-50%, 0);
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 2; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#mysnackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@media (max-width: 450px){
+
+	.mymodal-content {
+		margin-top: 20%;
+	}
+
+}
+
+.progress .progress-value {
+	z-index: 1 !important;
+}
