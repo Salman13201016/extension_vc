@@ -1,0 +1,111 @@
+<!Doctype html>
+<html>
+
+    <body>
+        <form action="generator.html" method="post">
+            <h3>You can generate code here</h3>
+            <input type="text" id="code" placeholder="User Id">
+            <input type="button" placeholder="generate your code" value="Generate Code" onclick="gc();">
+        </form>
+        <h4 id="res">
+            
+        </h4>
+    
+    
+    <script>
+        function gc(){
+            id = document.getElementById("code").value
+            // alert(id);
+            if (!id) {
+                // console.log('fail genvale');
+                return null;
+            }
+            id = id.replace(/ca/gi, '');
+            month = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+            d = new Date()
+            c_month = month[d.getMonth()]
+            rkey = parseInt(id);
+            sumsy = d.getMonth()+1  
+            // alert((d.getMonth()+1))
+	        mkey = (rkey * sumsy) % 26;
+            // alert(mkey);
+            let cacode = id.split('').map((val,idx,arr) => {
+                switch (val) {
+                    case '0':
+                        return 'B';
+                        break;
+                    case '1':
+                        return 'D';
+                        break;
+                    case '2':
+                        return 'F';
+                        break;
+                    case '3':
+                        return 'H';
+                        break;
+                    case '4':
+                        return 'J';
+                        break;
+                    case '5':
+                        return 'L';
+                        break;
+                    case '6':
+                        return 'N';
+                        break;
+                    case '7':
+                        return 'P';
+                        break;
+                    case '8':
+                        return 'R';
+                        break;
+                    case '9':
+                        return 'T';
+                        break;
+                    default:
+                        return 'V';
+                        break;
+                    }
+                }).join('');
+                let verification_code = d.getFullYear();
+                // previous code
+                res = 'C' + cacode+verification_code + revstr(cacode) + 'A';
+                // res = res+verification_code
+                res = vig(revstr(res), csr(c_month, mkey))
+                document.getElementById("res").innerHTML = "Generate Code: "+res
+                // document.getElementById("res").style.display="block"
+                // alert(res)
+
+            }
+            
+        
+
+        function csr(msg, key) {
+            let c = [];
+            msg = msg.toUpperCase();
+            key = parseInt(key);
+            for (var i = 0; i < msg.length; i++) {
+                let x = ((msg.charCodeAt(i) - 65) + key++) % 26;
+                c.push(String.fromCharCode(x + 65));
+            }
+            return c.join('');
+	    }
+	function vig(msg, key) {
+		let c = [];
+		msg = msg.toUpperCase();
+		for (var i = 0; i < msg.length; i++) {
+			msg[i]
+			let x = ((msg.charCodeAt(i) - 65) + (key.charCodeAt(i % key.length) - 65)) % 26;
+			c.push(String.fromCharCode(x + 65));
+		}
+		return c.join('');
+	}
+
+	function revstr(text) {
+		return text.split('').reverse().join('');
+	}
+    </script>
+    
+    </body>
+
+
+</html>

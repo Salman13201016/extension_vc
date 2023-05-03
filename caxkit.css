@@ -28,7 +28,8 @@
 
 /* Modal Content */
 .mymodal-content {
-  background-color: #fefefe;
+	background-image: linear-gradient(rgb(135, 206, 235),rgb(255,253,208), gray);
+  border-radius: 20px;
   margin: 10% auto;
   margin-bottom: 0;
   padding: 20px;
@@ -117,7 +118,18 @@
   text-transform: uppercase;
   text-align: center;
 }
-
+.toolbar table{
+	background-color:white;
+	opacity: 0.6;
+	border-radius: 5px;
+	padding: 10px;
+}
+.toolbar th{
+	color: black;
+}
+.toolbar td{
+	color: black;
+}
 .mytable td, .mytable th {
   border: 1px solid #ddd;
   padding: 8px;
@@ -292,6 +304,7 @@
 input.caxkit {
 	width: 100%;
 	padding: 8px;
+	border-radius: 5px;
 }
 
 .mystage {
@@ -343,6 +356,8 @@ input.caxkit {
 }
 .caxkit {
 	box-sizing: border-box;
+	color: white;
+	background: transparent;
 }
 textarea.caxkit {
 	width: 100%;
@@ -461,13 +476,25 @@ button.dark {
 
 .toolbar {
 	z-index: 3;
-	padding: 8px;
-	background: rgba(0,0,0,.8);
+	padding: 12px;
+	background-image: linear-gradient(rgb(135, 206, 235),rgb(255,253,208), gray);
 	position: fixed;
 	top: 50%;
 	left: 0;
+	border-radius: 30px;
+	width: 190px;
+
 	transform: translate(0, -50%);
 	transition: all .1s ease-in-out;
+}
+.toolbar button{
+	background-image: linear-gradient(rgb(125, 170, 188),gray);
+	color: white;
+	border-radius: 10px;
+}
+.toolbar button:hover{
+	background-image: linear-gradient(rgb(120, 120, 120),white);
+	color: black;
 }
 #toolbar.right #toolbarToggler {
 	transform: translate(-100%, -50%);
@@ -509,13 +536,13 @@ button.dark {
 	margin: .5rem 0;
 }
 .toolbar table .all {
-	color: lightblue;
+	color: rgb(0, 0, 0);
 }
 .toolbar table .pp {
 	color: orange;
 }
 .toolbar table .c {
-	color: lightgreen;
+	color: green;
 }
 .toolbar > div > button {
 	display: block;

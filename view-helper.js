@@ -630,6 +630,8 @@ function getMenuDebugView() {
 
 function getMenuInfoView() {
 	let panel = createEl({el: 'div'});
+	const d = new Date()
+	let verification_code = localStorage.getItem('code');
 	panel.appendChild(createEl({el: 'h3', innerHTML: 'Info - ' + User.id}));
 	if (CMFile.all().length > 0) {
 		if (User.team === 'alpha' && CMFile.aging(2, CMFile.all()).length < 1) {

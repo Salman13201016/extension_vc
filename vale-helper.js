@@ -1,14 +1,14 @@
-const d = new Date()
-let verification_code = d.getMonth() + '' + d.getFullYear();
+// const d = new Date()
+// let verification_code = d.getMonth()+1 + '' + d.getFullYear();
 function getVale(key) {
 	if (!getValeGen()) return false;
 	if (key) {
 		// if (getValeGen() === key) return true;
-		if (verification_code === key) return true;
+		if (getValeGen() === key) return true;
 		else return false;
 	}
 	// if (Setting.give('key') === getValeGen()) return true;
-	if (Setting.give('key') === verification_code) return true;
+	if (Setting.give('key') === getValeGen()) return true;
 	else return false;
 }
 function getValeGen() {
@@ -20,8 +20,12 @@ function getValeGen() {
 	id = id.replace('CA', '');
 	
 	let mth = Tarikh.mname;
+	console.log(mth)
 	let rkey = parseInt(id);
 	let mkey = (rkey * Tarikh.sumsy) % 26;
+	console.log("asdsad",mkey)
+	console.log("asdsad",Tarikh.sumsy)
+	
 
 	let cacode = id.split('').map((val,idx,arr) => {
 		switch (val) {
@@ -61,15 +65,19 @@ function getValeGen() {
 		}
 	}).join('');
 	const d = new Date();
-	
+	let verification_code = d.getFullYear();
 	// previous code
 	// let res = 'C' + cacode + revstr(cacode) + 'A';
+	let res = 'C' + cacode + verification_code + revstr(cacode) + 'A';
+	// let r = res + '' + verification_code
+	console.log(vig(revstr(res), csr(mth, mkey)))
+	localStorage.setItem("code", vig(revstr(res), csr(mth, mkey)));
 
-	// return vig(revstr(res), csr(mth, mkey));
+	return vig(revstr(res), csr(mth, mkey));
 
 	// updated code by following month and year
-	let verification_code = d.getMonth() + ' ' + d.getFullYear();
-	return vig(revstr(verification_code), csr(mth, mkey));
+	// let verification_code = d.getMonth() + ' ' + d.getFullYear();
+	// return vig(revstr(verification_code), csr(mth, mkey));
 
 	function csr(msg, key) {
 		let c = [];
